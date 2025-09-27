@@ -26,22 +26,33 @@ function updateCountdown() {
     if (timeLeft.days === 0) {
         h1.textContent = 'Happy Birthday My Love';
     } else {
-        h1.textContent = 'Countdown to October 4th, 2025';
+        h1.textContent = "Countdown to Oprah's Birthday!";
     }
     updatePoetryLink();
 }
 
+function getDayOfYear(date) {
+    const start = new Date(date.getFullYear(), 0, 0);
+    const diff = date - start;
+    const oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+}
+
 function updatePoetryLink() {
-    const startDate = new Date();
-    startDate.setDate(startDate.getDate() - 1); // Yesterday as day 0
+    const startDate = new Date('2025-09-27T00:00:00');
     const now = new Date();
-    const dayDiff = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-    const dayNumber = dayDiff % 7 === 0 ? 7 : dayDiff % 7;
+    const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
     const link = document.getElementById('poetry-link');
-    if (getTimeLeft().days === 0) {
+    if (daysSinceStart < 0) {
+        // Before start, perhaps no link or default
+        link.href = 'poetry1.html';
+    } else if (daysSinceStart < 7) {
+        link.href = 'poetry' + (daysSinceStart + 1) + '.html';
+    } else if (daysSinceStart === 7) {
         link.href = 'final-poetry.html';
     } else {
-        link.href = `poetry${dayNumber}.html`;
+        // After, perhaps cycle or final
+        link.href = 'final-poetry.html';
     }
 }
 
