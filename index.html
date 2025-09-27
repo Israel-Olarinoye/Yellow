@@ -3,33 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to Oprah's Birthday</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pristina&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Countdown to Oprah's Birthday</h1>
-        <div class="countdown">
-            <div class="time-unit">
-                <span id="days">0</span>
-                <br>Days
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Your nickname" required>
             </div>
-            <div class="time-unit">
-                <span id="hours">0</span>
-                <br>Hours
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="My nickname" required>
             </div>
-            <div class="time-unit">
-                <span id="minutes">0</span>
-                <br>Minutes
-            </div>
-            <div class="time-unit">
-                <span id="seconds">0</span>
-                <br>Seconds
-            </div>
-        </div>
-        <a id="poetry-link" href="poetry1.html" class="poetry-link">View Today's Poetry</a>
+            <button type="submit">Login</button>
+        </form>
+        <div id="message"></div>
     </div>
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

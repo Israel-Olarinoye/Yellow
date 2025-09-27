@@ -9,7 +9,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         message.style.color = 'green';
         // Redirect to index.html
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'home.html';
         }, 1000);
     } else {
         message.textContent = 'Invalid username or password.';
