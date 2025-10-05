@@ -12,10 +12,6 @@ function getTimeLeft() {
     return { days, hours, minutes, seconds };
 }
 
-function getDaysLeft() {
-    return getTimeLeft().days;
-}
-
 function updateCountdown() {
     const timeLeft = getTimeLeft();
     document.getElementById('days').textContent = timeLeft.days;
@@ -27,32 +23,6 @@ function updateCountdown() {
         h1.textContent = 'Happy Birthday My Love';
     } else {
         h1.textContent = "Countdown to Oprah's Birthday!";
-    }
-    updatePoetryLink();
-}
-
-function getDayOfYear(date) {
-    const start = new Date(date.getFullYear(), 0, 0);
-    const diff = date - start;
-    const oneDay = 1000 * 60 * 60 * 24;
-    return Math.floor(diff / oneDay);
-}
-
-function updatePoetryLink() {
-    const startDate = new Date('2025-09-27T00:00:00');
-    const now = new Date();
-    const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-    const link = document.getElementById('poetry-link');
-    if (daysSinceStart < 0) {
-        // Before start, perhaps no link or default
-        link.href = 'poetry1.html';
-    } else if (daysSinceStart < 7) {
-        link.href = 'poetry' + (daysSinceStart + 1) + '.html';
-    } else if (daysSinceStart === 7) {
-        link.href = 'final-poetry.html';
-    } else {
-        // After, perhaps cycle or final
-        link.href = 'final-poetry.html';
     }
 }
 

@@ -109,7 +109,7 @@ h1 {
 
 .poetry-link, .back-link {
     display: inline-block;
-    margin-top: 20px;
+    margin: 10px 5px;
     padding: 10px 20px;
     background: #8B4513;
     color: #FFD700;
@@ -120,6 +120,26 @@ h1 {
 
 .poetry-link:hover, .back-link:hover {
     background: #A0522D;
+}
+
+.poetry-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.poetry-item {
+    text-align: center;
+}
+
+.excerpt {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0 0;
+    font-style: italic;
+    max-width: 400px;
+    line-height: 1.4;
 }
 
 #poem {

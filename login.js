@@ -7,7 +7,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     if (username === 'Yellow' && password === 'Tinylegs') {
         message.textContent = 'Login successful!';
         message.style.color = 'green';
-        // Redirect to index.html
+        // Redirect to home.html
         setTimeout(() => {
             window.location.href = 'home.html';
         }, 1000);
